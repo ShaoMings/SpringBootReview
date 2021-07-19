@@ -1,0 +1,6 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+shaoming:
+  username: 邵明
+  age: 22
