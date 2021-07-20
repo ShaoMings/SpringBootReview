@@ -47,4 +47,21 @@ update student set name = '你好' where age = 22;
 update student set name = 'MM',gender = '女' where age = 20;
 
 
+# delete语句 删除操作   DELETE FROM 表名称 WHERE 列名称 = 值
 
+delete from student where age = 21;
+
+# 删除所有行 DELETE FROM table_name  或者：  DELETE * FROM table_name
+
+
+# 不包含 Not
+
+select * from student where age not like '%3';
+
+
+# 通配符   % 代替一个或多个字符   _  代替一个字符
+# [charlist]  需配合 RLIKE 使用  匹配以字符列表中的字符 开头的记录
+
+SELECT * FROM person WHERE City RLIKE '[A-N]';
+
+SELECT * FROM person WHERE City NOT RLIKE '[L]';
