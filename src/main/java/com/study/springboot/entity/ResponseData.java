@@ -1,5 +1,6 @@
 package com.study.springboot.entity;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @since 1.0
  **/
 @Data
+@ApiModel("响应json包含信息")
 public class ResponseData {
     private Boolean success;
     private String code;

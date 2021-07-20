@@ -1,6 +1,7 @@
 package com.study.springboot.entity;
 
 
+import io.swagger.annotations.ApiModel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
  * @since 1.0
  **/
 @Component("test")
+@ApiModel("测试类")
 public class TestClass {
     private String name;
 

@@ -4,9 +4,11 @@ import com.study.springboot.entity.Data;
 import com.study.springboot.entity.Items;
 import com.study.springboot.entity.ResponseData;
 import com.study.springboot.utils.SpringBootUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.ArrayList;
 
@@ -25,13 +27,15 @@ import java.util.ArrayList;
  * @date 2021/7/20 13:13
  * @since 1.0
  **/
+@Api(tags = "接口结果统一封装")
 @RestController
 public class ApiResultEncapsulation {
 
     public static final Integer ITEMS_NUM = 10;
 
+    @ApiOperation("获取标准json格式数据")
     @GetMapping("/json")
-    public ResponseData getJson(@RequestParam(value = "count",required = false,defaultValue = "1") String count){
+    public ResponseData getJson(@ApiParam("生成数据条数") @RequestParam(value = "count",required = false,defaultValue = "1") String count){
         Boolean isNum = SpringBootUtils.isAllNumber(count);
         int len = 1;
         if (isNum){
@@ -50,6 +54,13 @@ public class ApiResultEncapsulation {
         }
         responseData.setData(new Data(items));
         return responseData;
+    }
+
+
+    @ApiIgnore
+    @DeleteMapping("/users/{id}")
+    public String deleteUserById(@PathVariable("id") Long id){
+        return "test!";
     }
 
 

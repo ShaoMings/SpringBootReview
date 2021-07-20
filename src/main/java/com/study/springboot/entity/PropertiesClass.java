@@ -1,5 +1,6 @@
 package com.study.springboot.entity;
 
+import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Component;
  **/
 @Component
 @ConfigurationProperties(prefix = "shaoming")
+@ApiModel("配置文件映射类")
 public class PropertiesClass {
     private String username;
     private String age;

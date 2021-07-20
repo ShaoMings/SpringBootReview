@@ -1,5 +1,6 @@
 package com.study.springboot.entity;
 
+import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.stereotype.Component;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
  **/
 @AllArgsConstructor
 @Data
+@ApiModel("用户数据信息")
 public class Items {
     private String id;
     private String name;
