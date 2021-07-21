@@ -4,3 +4,15 @@ server:
 shaoming:
   username: 邵明
   age: 22
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///world
+    username: root
+    password: adminadmin
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
