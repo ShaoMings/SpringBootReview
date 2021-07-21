@@ -34,4 +34,10 @@ public class User {
      */
     @Version
     private Integer version;
+    /**
+     * 逻辑删除 不是真正从数据库移除  通过一个标志表示删除状态
+     * 1:已删除 一般用户查看不了 用于管理员查看删除记录  0:未删除
+     */
+    @TableLogic
+    private Integer deleted;
 }

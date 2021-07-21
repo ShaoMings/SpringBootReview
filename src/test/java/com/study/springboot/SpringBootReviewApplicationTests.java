@@ -1,6 +1,7 @@
 package com.study.springboot;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.study.springboot.entity.User;
 import com.study.springboot.mapper.CityMapper;
 import com.study.springboot.mapper.UserMapper;
@@ -75,7 +76,7 @@ class SpringBootReviewApplicationTests {
 
     @Test
     void testUserDelete(){
-        userMapper.deleteById(13);
+        userMapper.deleteById(11);
     }
 
     /**
@@ -109,6 +110,28 @@ class SpringBootReviewApplicationTests {
         userMapper.updateById(user);
 
     }
+
+    /**
+     * 测试分页
+     */
+
+    @Test
+    void testSelectPage(){
+        // Page<>(当前页,页面展示记录数)
+        Page<User> userPage = new Page<>(1,5);
+        userMapper.selectPage(userPage,null);
+
+        userPage.getRecords().forEach(System.out::println);
+
+        //第二页
+        Page<User> userPage1 = new Page<>(2, 5);
+        userMapper.selectPage(userPage1,null);
+        userPage1.getRecords().forEach(System.out::println);
+
+        System.out.println(userPage.getTotal());
+    }
+
+
 
 
 
