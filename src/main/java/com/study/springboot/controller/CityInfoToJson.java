@@ -19,7 +19,7 @@ import java.util.List;
  * @date 2021/7/21 10:44
  * @since 1.0
  **/
-@Api(value = "把City表的信息转为Json")
+@Api(tags = "把City表的信息转为Json")
 @RestController
 @RequestMapping("/city")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))

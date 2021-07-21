@@ -16,3 +16,5 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     auto-mapping-behavior: full
+    #日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

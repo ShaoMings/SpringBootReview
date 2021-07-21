@@ -12,7 +12,6 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 
 @EnableOpenApi
 @SpringBootApplication
-@MapperScan("com.study.springboot.mapper")
 public class SpringBootReviewApplication {
 
     public static void main(String[] args) {
