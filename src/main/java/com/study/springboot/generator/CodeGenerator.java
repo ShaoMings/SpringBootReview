@@ -73,8 +73,8 @@ public class CodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        // 设置映射的表名
-        strategy.setInclude("user");
+        // 设置映射的表名  生成其他表只需修改这里即可
+        strategy.setInclude("city");
         // lombok 支持
         strategy.setEntityLombokModel(true);
         // 逻辑删除
