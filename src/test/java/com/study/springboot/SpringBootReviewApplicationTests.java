@@ -2,10 +2,12 @@ package com.study.springboot;
 
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.study.springboot.config.MysqlConfig;
 import com.study.springboot.entity.User;
 import com.study.springboot.mapper.CityMapper;
 import com.study.springboot.mapper.UserMapper;
 import com.study.springboot.service.CityService;
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,13 +18,22 @@ import java.util.List;
 
 
 @SpringBootTest
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 class SpringBootReviewApplicationTests {
 
-    @Autowired
-    CityService service;
 
-    @Autowired
-    CityMapper cityMapper;
+    private final CityService service;
+
+    private final MysqlConfig mysqlConfig;
+
+    private final CityMapper cityMapper;
+
+
+    @Test
+    void configTest(){
+        mysqlConfig.test();
+    }
+
 
     @Test
     void contextLoads() {
@@ -30,8 +41,7 @@ class SpringBootReviewApplicationTests {
 //        cityMapper.selectList(null).forEach(System.out::println);
     }
 
-    @Autowired
-    UserMapper userMapper;
+    private final UserMapper userMapper;
 
     @Test
     void testUserSelect(){
