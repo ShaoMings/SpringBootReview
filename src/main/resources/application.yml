@@ -1,15 +1,17 @@
 server:
   tomcat:
     uri-encoding: UTF-8
+  port: 8085
 shaoming:
   username: 邵明
   age: 22
+
 
 spring:
   profiles:
     active: dev
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver  #引入sql性能分析插件p6spy后 需要更换驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver  #引入sql性能分析插件p6spy后 需要更换驱动
     url: jdbc:mysql:///world?useSSL=true   #引入sql性能分析插件p6spy后 需要更换url
 #    url: jdbc:p6spy:mysql://localhost:3306/world
 #    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
@@ -35,4 +37,4 @@ temp:
   username: shaoming
   password: 6666
   url: www.baidu.com
-  driver: com.mysql.Driver
+  driver: com.mysql.cj.Driver
